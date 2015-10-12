@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Где еще живет скорость в web</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=792, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<base href="node_modules/shower-ribbon/" />
+	<link rel="stylesheet" href="styles/screen.css">
+	<style>
+		.slide>div.demoRect {
+			position: absolute;
+			outline: 1px solid red;
+			padding: 0;
+			background: #477FB7;
+			opacity: 0.3;
+		}
+		.full .slide:not(.cover):not(.shout):before,
+		.full .slide.cover.titleslide:before {
+			content: "";
+			display: block;
+			width: 75px;
+			height: 75px;
+			position: absolute;
+			right: 10px;
+			bottom: 15px;
+			background: url(../../images/moscowjs.svg) no-repeat;
+			background-size: cover;
+		}
+		mark.important{
+			background:#C00;
+			color:#FFF
+		}
+		.about {
+			text-align: right;
+			clear: both;
+		}
+		.titleslide h2, .titleslide p {
+			color: black;
+		}
+		.qr {
+			float: right;
+		}
+
+		code {
+			font-weight: bolder;
+		}
+
+		mark[class^="code-"] {
+			padding: 0;
+			background: none;
+			font-weight: bolder;
+		}
+
+		mark.code-keyword {
+			color: #0B1D8D;
+		}
+		mark.code-reserved {
+			color: #962588;
+		}
+		mark.code-property {
+			color: #968B5B;
+		}
+		mark.code-variable {
+			color: #649595;
+		}
+		mark.code-string {
+			color: #008F28;
+		}
+		mark.code-value {
+			color: #1C39F6;
+		}
+		.battery {
+			width: 300px;
+			height: 100px;
+			margin: 0 auto;
+			border: 5px solid black;
+			position: relative;
+			display: flex;
+			justify-content: center;
+		}
+		.battery:before {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 15px;
+			height: 33px;
+			background: black;
+			right: -18px;
+			top: 30px;
+		}
+		.battery>.progress {
+			width: 0;
+			background: rgba(0, 128, 0, 0.17);
+			height: 100%;
+		}
+		.battery.charging:after {
+			content: "⚡";
+			display: block;
+			font-size: 50px;
+		}
+	</style>
+</head>
+<body class="list">
+	<!--
+		Debug class on <body> enables
+		cyan grid on slides
+		-->
+	<header class="caption">
+		<h1>Возможности современных браузеров</h1>
+		<p><a href="mailto:oleg@elifantiev.ru">Олег Елифантьев</a></p>
+	</header>
+
+	<section class="slide cover titleslide"><div>
+		TODO image
+		<h2>Возможности современных браузеров</h2>
+		<p>Горячий код<br />Олег Елифантьев, @oelifantiev</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Олег Елифантьев</h2>
+		<p>Компания Тензор, г. Ярославль<br />
+		Веб-разработчик (JavaScript, Node.JS)<br />
+		Организатор <a href="http://yarfrontend.ru/">Yaroslavl Frontend Meetup</a> (http://yarfrontend.ru)<br />
+		<a href="https://twitter.com/oelifantiev">@oelifantiev</a>
+	</div></section>
+
+
+	<section class="slide shout"><div>
+		<h2>Давным давно, в далекой галактике&hellip;</h2>
+	</div></section>
+
+	<section class="slide cover"><div>
+		<img src="/images/old.jpg" width="100%" />
+	</div></section>
+
+	<section class="slide cover"><div>
+		<img src="/images/deathstar.jpg" width="100%" />
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>История</h2>
+		<ul>
+			<li>29 октября 1969: первый сеанс связи Лос-Анжелес &mdash; Стенфорд</li>
+			<li class="next">1971: электронная почта</li>
+			<li class="next">1989-1991: протокол HTTP, первый браузер, интернет стал общедоступным</li>
+		</ul>
+	</div></section>
+
+	<section class="slide cover"><div>
+		<img src="/images/lynx.png" width="100%" />
+	</div></section>
+
+	<section class="slide cover"><div>
+		<img src="/images/mosaic.jpg" width="100%" />
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Динамическое содержимое</h2>
+		<ul>
+			<li>Java-апплеты</li>
+			<li class="next">1995 г., JavaScript. Простейшие манипуляции со страницей.</li>
+		</ul>
+		<p>На рынке браузеров доминирует Microsoft Internet Explorer&hellip;</p>
+	</div></section>
+
+	<section class="slide cover"><div>
+		<img src="/images/girls-browsers.png" width="100%" />
+	</div></section>
+
+	<section class="slide cover"><div>
+		<img src="/images/html5-the-future.png" width="100%" />
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>Так что же они умеют?</h2>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Геолокация</h2>
+		<p>Позволяет определить местоположение пользователя.</p>
+		<p>Работает не только на мобильных устройствах, где есть GPS, но и даже в Desktop-браузерах!</p>
+		<p class="note">http://caniuse.com/#feat=geolocation</p>
+	</div></section>
+
+	<section class="slide" id="demo-geolocation"><div>
+		<h2>Определение координат&hellip;</h2>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Battery Status API</h2>
+		<p>Позволяет отслеживать уровень заряда аккумулятор устройства</p>
+		<p class="note">http://caniuse.com/#feat=battery-status</p>
+	</div></section>
+
+	<section class="slide" id="demo-battery"><div>
+		<h2>Live Demo!</h2>
+		<div class="battery"><div class="progress"></div></div>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Online/offline Status API</h2>
+		<p>Событие при смене статуса коннективности.</p>
+		<p class="note">http://caniuse.com/#feat=online-status</p>
+	</div></section>
+
+	<section class="slide">
+		<div>
+			<h2>Спасибо за внимание!</h2>
+			TODO QR
+			<img class="qr" src="http://qrcoder.ru/code/?http%3A%2F%2Fbit.ly%2F1MxMMV5&6&0" />
+			TODO link
+			<p>Доп. материалы: <a href="http://bit.ly/render-speed">http://bit.ly/render-speed</a><br />Вопросы?</p>
+			<p class="about">
+				Горячий код<br />
+				Елифантьев Олег, Тензор<br />
+				<a href="https://twitter.com/oelifantiev">@oelifantiev</a>
+			</p>
+		</div>
+	</section>
+
+	<p class="badge"><a href="https://github.com/Olegas/talks-improve-rendering-speed">Fork me on Github</a></p>
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"><div></div></div>
+	<script src="../shower-core/shower.min.js"></script>
+	<script src="../../js/slide-handlers.js"></script>
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+</body>
+</html>
