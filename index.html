@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Где еще живет скорость в web</title>
+	<title>Возможности современных браузеров</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=792, user-scalable=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<base href="node_modules/shower-ribbon/" />
 	<link rel="stylesheet" href="styles/screen.css">
 	<style>
-		.slide>div.demoRect {
-			position: absolute;
-			outline: 1px solid red;
-			padding: 0;
-			background: #477FB7;
-			opacity: 0.3;
+		.slide.cover.titleslide {
+			background: white url(/images/superhero.png) center center no-repeat;
+		}
+		.titleslide .about {
+			text-align: left;
+			margin-top: 250px;
 		}
 		.full .slide:not(.cover):not(.shout):before,
 		.full .slide.cover.titleslide:before {
 			content: "";
 			display: block;
-			width: 75px;
-			height: 75px;
+			width: 100px;
+			height: 125px;
 			position: absolute;
 			right: 10px;
 			bottom: 15px;
-			background: url(../../images/moscowjs.svg) no-repeat;
+			background: url(../../images/logo.jpg) no-repeat;
 			background-size: cover;
 		}
 		mark.important{
@@ -40,35 +40,6 @@
 		}
 		.qr {
 			float: right;
-		}
-
-		code {
-			font-weight: bolder;
-		}
-
-		mark[class^="code-"] {
-			padding: 0;
-			background: none;
-			font-weight: bolder;
-		}
-
-		mark.code-keyword {
-			color: #0B1D8D;
-		}
-		mark.code-reserved {
-			color: #962588;
-		}
-		mark.code-property {
-			color: #968B5B;
-		}
-		mark.code-variable {
-			color: #649595;
-		}
-		mark.code-string {
-			color: #008F28;
-		}
-		mark.code-value {
-			color: #1C39F6;
 		}
 		.battery {
 			width: 300px;
@@ -99,6 +70,18 @@
 			display: block;
 			font-size: 50px;
 		}
+		#demo-gum iframe {
+			width: 100%;
+			height: 100%;
+		}
+		#demo-fileapi img {
+			max-width: 45%;
+		}
+		#demo-fileapi p {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
 	</style>
 </head>
 <body class="list">
@@ -112,9 +95,8 @@
 	</header>
 
 	<section class="slide cover titleslide"><div>
-		TODO image
 		<h2>Возможности современных браузеров</h2>
-		<p>Горячий код<br />Олег Елифантьев, @oelifantiev</p>
+		<p class="about">Горячий код<br />Олег Елифантьев, @oelifantiev</p>
 	</div></section>
 
 	<section class="slide"><div>
@@ -125,6 +107,16 @@
 		<a href="https://twitter.com/oelifantiev">@oelifantiev</a>
 	</div></section>
 
+	<section class="slide"><div>
+		<h2>Quiz =)</h2>
+		<p>Что НЕ умеют современные браузеры?</p>
+		<ol>
+			<li>Считать биткоины</li>
+			<li>Рисовать 3D-графику</li>
+			<li>Определять геолокацию устройства</li>
+			<li>Мерять заряд батареи устройства</li>
+		</ol>
+	</div></section>
 
 	<section class="slide shout"><div>
 		<h2>Давным давно, в далекой галактике&hellip;</h2>
@@ -177,6 +169,18 @@
 	</div></section>
 
 	<section class="slide"><div>
+		<h2>Этим нас не удивить!</h2>
+		<ul>
+			<li class="next">Webfonts</li>
+			<li class="next">Адаптивная верстка (media-query)</li>
+			<li class="next">FlexBox</li>
+			<li class="next">CSS Animations, CSS Transitions</li>
+			<li class="next">WebSockets, Server Sent Events</li>
+			<li class="next">etc&hellip;</li>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
 		<h2>Геолокация</h2>
 		<p>Позволяет определить местоположение пользователя.</p>
 		<p>Работает не только на мобильных устройствах, где есть GPS, но и даже в Desktop-браузерах!</p>
@@ -204,13 +208,119 @@
 		<p class="note">http://caniuse.com/#feat=online-status</p>
 	</div></section>
 
+	<section class="slide"><div>
+		<h2>Тэг &lt;video&gt;</h2>
+		<p>Позволяет внедрять проигрыватель видео без дополнительных плагинов (например без Flash)</p>
+		<p class="note">http://caniuse.com/#feat=video</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>Тэг &lt;video&gt;</h2>
+		<div style="width: 70%; margin: 0 auto;">
+			<video width="100%" autoplay controls onended="this.play()">
+				<source src="/images/video-sample.mp4" type="video/mp4" />
+			</video>
+		</div>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>getUserMedia/Stream API</h2>
+		<p>Доступ к устройствам пользователя:</p>
+		<ul>
+			<li>Веб-камера</li>
+			<li>Микрофон</li>
+		</ul>
+		<p class="note">http://caniuse.com/#feat=stream</p>
+	</div></section>
+
+	<section class="slide" id="demo-gum"><div>
+		<iframe src="" frameborder="0" seamless></iframe>
+	</div></section>
+	
+	<section class="slide"><div>
+		<h2>Еще демо</h2>
+		<ul>
+			<li><a href="http://shinydemos.com/facekat/">http://shinydemos.com/facekat/</a></li>
+			<li><a href="http://webaudiodemos.appspot.com/">http://webaudiodemos.appspot.com/</a></li>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>WebRTC</h2>
+		<p>RTC &mdash; Real Time Communication.
+			Прямые соединения между клиентами, минуя сервер. Peer-2-Peer прямо из браузера!</p>
+		<p class="note">http://caniuse.com/#feat=rtcpeerconnection</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>WebRTC. Применение.</h2>
+		<ul>
+			<li>Общение</li>
+			<li>Игры</li>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>File API</h2>
+		<p>Доступ к сождержимому файлов, выбранных через input[type=file] без сервера!</p>
+		<p class="note"><a href="http://caniuse.com/#feat=fileapi">http://caniuse.com/#feat=fileapi</a></p>
+	</div></section>
+
+	<section class="slide" id="demo-fileapi"><div>
+		<h2>File API</h2>
+		<input type="file">
+		<p>
+			<img />
+			<canvas></canvas>
+		</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>WebGL</h2>
+		<p>3D-графика, управляемая на JavaScript!</p>
+		<p>Шейдеры, текстуры, вершины &mdash; вот это вот все. Прямо у вас в браузере!</p>
+		<p class="note">http://caniuse.com/#feat=webgl</p>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>WebGL Demo</h2>
+		<ul>
+			<li><a href="https://www.chromeexperiments.com/webgl?sort=popular">Chrome Experiments</a></li>
+			<li><a href="http://madebyevan.com/webgl-water/">http://madebyevan.com/webgl-water/</a></li>
+		</ul>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>WebWorkers / ServiceWorkers</h2>
+		<ul>
+			<li class="next">Выполнение процессов (например длинных синхронных вычислений) в фоне</li>
+			<li class="next">Proxy-сервер, обработка запросов/подмена результатов, кэширование</li>
+		</ul>
+		<p class="note">http://caniuse.com/webworkers, http://caniuse.com/serviceworkers</p>
+	</div></section>
+
+	<section class="slide shout"><div>
+		<h2>JavaScript!</h2>
+	</div></section>
+
+	<section class="slide"><div>
+		<h2>JavaScript</h2>
+		<ul>
+			<li class="next">NodeJS &mdash; JS на сервере!</li>
+			<li class="next">Tessel &mdash; JS на микроконтроллере!</li>
+			<li class="next">React-native &mdash; JS на iOS/Android в нативном приложении!</li>
+		</ul>
+	</div></section>
+
+	<section class="slide shout grow"><div>
+		<h2>Дерзайте!</h2>
+	</div></section>
+
 	<section class="slide">
 		<div>
 			<h2>Спасибо за внимание!</h2>
-			TODO QR
-			<img class="qr" src="http://qrcoder.ru/code/?http%3A%2F%2Fbit.ly%2F1MxMMV5&6&0" />
-			TODO link
-			<p>Доп. материалы: <a href="http://bit.ly/render-speed">http://bit.ly/render-speed</a><br />Вопросы?</p>
+			<img class="qr" src="http://qrcoder.ru/code/?http%3A%2F%2Fbit.ly%2Fmodern-web-platform&6&0" />
+			<p>Доп. материалы:<br /><a href="http://bit.ly/modern-web-platform">http://bit.ly/modern-web-platform</a><br />Вопросы?</p>
 			<p class="about">
 				Горячий код<br />
 				Елифантьев Олег, Тензор<br />
